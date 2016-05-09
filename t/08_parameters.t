@@ -24,7 +24,12 @@ sub dt {
 }
 
 
-{
+sub main {
+   if ($DateTime::TimeZone::VERSION < 0.18) {
+      plan skip_all => "DateTime::TimeZone 0.18 required";
+      return;
+   }
+
    my $local_tz_name = DateTime::TimeZone->new( name => 'local' )->name;
 
    my $nonlocal_tz_name = $local_tz_name eq 'America/Halifax' ? 'America/Vancouver' : 'America/Halifax';
@@ -105,3 +110,5 @@ sub dt {
       is($got, $expected, $name);
    }
 }
+
+main();

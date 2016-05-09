@@ -23,7 +23,7 @@ This module requires these other modules and libraries:
     Software::License::CC0_1_0  (For installation only)
     Test::More                  (For testing only)
     DateTime
-    DateTime::TimeZone
+    DateTime::TimeZone          (1.53 or higher is required to avoid skipping tests)
     Exporter
     Scalar::Util
     strict
