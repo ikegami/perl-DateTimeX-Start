@@ -95,9 +95,9 @@ Version 1.0.1
     my $dt = start_of_date( DateTime->now( time_zone => 'local' ) );
 
     # These three are equivalent.
-    my $dt = start_of_date([2014, 1, 1], 'local');
-    my $dt = start_of_date([2014, 1], 'local');
-    my $dt = start_of_date([2014], 'local');
+    my $dt = start_of_date([2014, 1, 1]);
+    my $dt = start_of_date([2014, 1]);
+    my $dt = start_of_date([2014]);
 
     my $dt = start_of_date(  DateTime->now( time_zone => 'local' ) );
     my $dt = start_of_month( DateTime->now( time_zone => 'local' ) );
@@ -108,7 +108,7 @@ Version 1.0.1
 
 In Sao Paulo, in the night of Oct 19th, 2013, the clocks went from 23:59:59 to 01:00:00.
 That's just one example of the fact that not all days have a midnight hour.
-This module provides a mean of determine when a particular day (or month or year) starts.
+This module provides a mean of determining when a particular day (or month or year) starts.
 
 
 =head1 FUNCTIONS
@@ -128,11 +128,11 @@ C<$date> must be one of the following:
 
 =item * A DateTime object (to find the first time of C<< $date->strftime('%Y-%m-%d') >>),
 
-=item * A reference to an array containing a year, a month and a day (to find the first time of the specified date),
+=item * A reference to an array containing a year, a month and a day (C<[$y,$m,$d]>, to find the first time of the specified date),
 
-=item * A reference to an array containing a year and month (to find the first time of the specified month), or
+=item * A reference to an array containing a year and month (C<[$y,$m]>, to find the first time of the specified month), or
 
-=item * A reference to an array containing a year (to find the first time of the specified year).
+=item * A reference to an array containing a year (C<[$y]>, to find the first time of the specified year).
 
 =back
 
@@ -155,9 +155,9 @@ C<$date> must be one of the following:
 
 =item * A DateTime object (to find the first time of the month given by C<< $date->strftime('%Y-%m') >>),
 
-=item * A reference to an array containing a year and month (to find the first time of the specified month), or
+=item * A reference to an array containing a year and month (C<[$y,$m]>, to find the first time of the specified month), or
 
-=item * A reference to an array containing a year (to find the first time of the specified year)
+=item * A reference to an array containing a year (C<[$y]>, to find the first time of the specified year).
 
 =back
 
@@ -180,7 +180,7 @@ C<$date> must be one of the following:
 
 =item * A DateTime object (to find the first time of the month given by C<< $date->year >>), or
 
-=item * A reference to an array containing a year (to find the first time of the specified year)
+=item * A reference to an array containing a year (C<[$y]>, to find the first time of the specified year).
 
 =back
 
@@ -188,7 +188,7 @@ C<$tz_or_tz_name> must be either a time zone name supported by DateTime::TimeZon
 It defaults to C<< $dt->time_zone >> if C<$date> is a DateTime object, and C<'local'> otherwise.
 
 
-=head2 start_of_today
+=head2 start_of_today / today
 
    my $dt = start_of_today();
    my $dt = start_of_today($tz_or_tz_name);
@@ -225,7 +225,7 @@ Nothing is exported by default. The following are exported on demand:
 
 =item * C<:ALL>
 
-For all of the above
+For all of the above.
 
 =item * C<:long>
 
@@ -249,6 +249,10 @@ The code makes the following assumptions about time zones:
 =item * In no time zone does a date starts more than 24*60*60 seconds before the same date starts in UTC.
 
 =item * In no time zone does a date starts more than 24*60*60 seconds after the same date starts in UTC.
+
+=item * There is no year without a January.
+
+=item * There is no month without a 1st.
 
 =item * Jumps in time zones only occur on times with zero seconds. (Optimization)
 

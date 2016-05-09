@@ -2,7 +2,7 @@ DateTimeX-Start
 
 In Sao Paulo, on the night of Oct 19th, 2013, the clocks went from 23:59:59 to 01:00:00.
 That's just one example of the fact that not all days have a midnight hour.
-This module provides a mean of determine when a particular day (or month or year) starts.
+This module provides a mean of determining when a particular day (or month or year) starts.
 
 
 INSTALLATION
