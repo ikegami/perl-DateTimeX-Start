@@ -1,8 +1,10 @@
 Revision history for DateTimeX-Start
 
-1.2.0   ~~~/~~/~~
-        Skip tests requiring newer DateTime::TimeZone than the one installed.
+1.2.0   ~~~-~~-~~
+        - Skip tests requiring newer DateTime::TimeZone than the one installed.
+        - Fixes for "make disttest".
+        - Documentation improvements.
         ~~~
 
-1.0.0   2016/04/24
-        Initial version.
+1.0.0   2016-04-24
+        - Initial version.

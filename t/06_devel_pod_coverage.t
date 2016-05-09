@@ -1,9 +1,9 @@
 #!perl
 
+# Expected to be run from ../ (make test) or ../blib/ (make disttest)
+
 use strict;
 use warnings;
-
-use FindBin qw( $RealBin );
 
 use Test::More;
 
@@ -23,5 +23,4 @@ BEGIN {
       or plan skip_all => "Pod::Coverage $min_pc required for testing POD coverage";
 }
 
-chdir($RealBin) or die $!;
 all_pod_coverage_ok();

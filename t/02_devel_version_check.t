@@ -1,9 +1,9 @@
 #!perl
 
+# Expected to be run from ../ (make test) or ../blib/ (make disttest)
+
 use strict;
 use warnings;
-
-use FindBin qw( $RealBin );
 
 use Test::More;
 
@@ -25,8 +25,6 @@ sub slurp_file {
 }
 
 {
-   chdir("$RealBin/..") or die $!;
-
    my $base_file    = slurp_file('lib/DateTimeX/Start.pm');
    my $changes_file = slurp_file('Changes');
 

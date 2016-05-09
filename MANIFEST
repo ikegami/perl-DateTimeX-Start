@@ -1,5 +1,4 @@
 .gitignore
-Makefile.PL
 Changes
 lib/DateTimeX/Start.pm
 LICENSE.txt

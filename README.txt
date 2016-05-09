@@ -31,29 +31,21 @@ This module requires these other modules and libraries:
     warnings
 
 
-SUPPORT AND DOCUMENTATION
+DOCUMENTATION
 
 After installing, you can find documentation for this module with the
 perldoc command.
 
     perldoc DateTimeX::Start
 
-You can also look for information at:
+You can also find it online at these locations:
 
-    RT, CPAN's request tracker
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=DateTimeX-Start
+    http://search.cpan.org/dist/DateTimeX-Start
 
-    AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/DateTimeX-Start
-
-    CPAN Ratings
-        http://cpanratings.perl.org/d/DateTimeX-Start
-
-    Search CPAN
-        http://search.cpan.org/dist/DateTimeX-Start
+    https://metacpan.org/release/DateTimeX-Start
 
 
-COPYRIGHT AND LICENCE
+COPYRIGHT AND LICENSE
 
 No rights reserved.
 

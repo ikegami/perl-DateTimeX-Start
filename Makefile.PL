@@ -35,10 +35,8 @@ WriteMakefile(
                'version'             => 0,
                'warnings'            => 0,
             },
-            recommends => {
-            },
-            suggests => {
-            },
+            # recommends => { },
+            # suggests => { },
          },
          test => {
             requires => {
@@ -52,7 +50,6 @@ WriteMakefile(
          develop => {
             requires => {
                'DateTime::TimeZone'  => 1.53,  # Key tests are skipped with earlier versions.
-               'FindBin'             => 0,
                'Pod::Coverage'       => 0.18,
                'Test::Pod::Coverage' => 1.08,
             },

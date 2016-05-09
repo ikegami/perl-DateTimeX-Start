@@ -266,41 +266,64 @@ or through the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue
 I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
 
-=head1 SUPPORT
+=head1 DOCUMENTATION AND SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc DateTimeX::Start
 
-You can also look for information at:
+You can also find it online at these locations:
 
-=over 4
+=over
 
-=item * Search CPAN
+=item * L<http://search.cpan.org/dist/DateTimeX-Start>
 
-L<http://search.cpan.org/dist/DateTimeX-Start>
+=item * L<https://metacpan.org/release/DateTimeX-Start>
 
-=item * RT: CPAN's request tracker
+=back
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=DateTimeX-Start>
+If you need help, the following are great resources:
 
-=item * AnnoCPAN: Annotated CPAN documentation
+=over
 
-L<http://annocpan.org/dist/DateTimeX-Start>
+=item * L<https://stackoverflow.com/|StackOverflow>
 
-=item * CPAN Ratings
+=item * L<http://www.perlmonks.org/|PerlMonks>
 
-L<http://cpanratings.perl.org/d/DateTimeX-Start>
+=item * You may also contact the author directly.
+
+=back
+
+Bugs and improvements can be reported using any of the following systems:
+
+=over
+
+=item Using CPAN's request tracker by emailing C<bug-DateTimeX-Start at rt.cpan.org>
+
+=item Using CPAN's request tracker at L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=DateTimeX-Start>
+
+=item Using GitHub's issue tracker at L<https://github.com/ikegami/perl-DateTimeX-Start/issues>
+
+=back
+
+
+=head1 REPOSITORY
+
+=over
+
+=item * Web: L<https://github.com/ikegami/perl-DateTimeX-Start>
+
+=item * git: L<https://github.com/ikegami/perl-DateTimeX-Start.git>
 
 =back
 
 
 =head1 AUTHOR
 
-Eric Brine, C<< <ikegami@adaelis.com> >>
+Eric Brine C<< <ikegami@adaelis.com> >>
 
 
-=head1 COPYRIGHT & LICENSE
+=head1 COPYRIGHT AND LICENSE
 
 No rights reserved.
 
