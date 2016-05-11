@@ -4,7 +4,7 @@ package DateTimeX::Start;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.2.0');
+use version; our $VERSION = qv('v1.3.0');
 
 use DateTime           qw( );
 use DateTime::TimeZone qw( );
@@ -77,7 +77,7 @@ DateTimeX::Start - Find the time at which a day starts.
 
 =head1 VERSION
 
-Version 1.2.0
+Version 1.3.0
 
 
 =head1 SYNOPSIS
