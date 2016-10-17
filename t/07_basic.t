@@ -41,12 +41,21 @@ sub dt {
       # Havana
       [ 'A day with two midnights', '1.53', sub { start_of_date([ 2013, 11,  3 ], 'America/Havana'   ) }, sub { dt(2013, 11,  3, 4, 0, 0)->set_time_zone('America/Havana'   ) } ],
 
+      [ 'Sao Paulo, A', '1.53', sub { start_of_date(DateTime->new( year => 2016, month => 10, day => 15, hour => 0, time_zone => 'America/Sao_Paulo' )) }, sub { dt(2016, 10, 15, 0, 0, 0, 'America/Sao_Paulo') } ],
+      [ 'Sao Paulo, B', '1.53', sub { start_of_date(DateTime->new( year => 2016, month => 10, day => 15, hour => 23, minute => 59, second => 59, time_zone => 'America/Sao_Paulo' )) }, sub { dt(2016, 10, 15, 0, 0, 0, 'America/Sao_Paulo') } ],
+      [ 'Sao Paulo, C', '1.53', sub { start_of_date(DateTime->new( year => 2016, month => 10, day => 15, hour => 23, minute => 59, second => 59, time_zone => 'America/Sao_Paulo' )->add(seconds => 1)) }, sub { dt(2016, 10, 16, 1, 0, 0, 'America/Sao_Paulo') } ],
+
       # UK
       [ 'UK, BST',                  '1.53', sub { start_of_date([ 2016, 10, 30 ], 'Europe/London'    ) }, sub { dt(2016, 10, 29,23, 0, 0)->set_time_zone('Europe/London') } ],
       [ 'UK, BST local',            '1.53', sub { start_of_date([ 2016, 10, 30 ], 'Europe/London'    ) }, sub { dt(2016, 10, 30, 0, 0, 0, 'Europe/London') } ],
       [ 'UK, UTC local',            '1.53', sub { start_of_date([ 2016, 10, 31 ], 'Europe/London'    ) }, sub { dt(2016, 10, 31, 0, 0, 0, 'Europe/London') } ],
       [ 'UK, UTC',                  '1.53', sub { start_of_date([ 2016, 10, 31 ], 'Europe/London'    ) }, sub { dt(2016, 10, 31, 0, 0, 0)->set_time_zone('Europe/London') } ],
       [ 'UK, UTC local',            '1.53', sub { start_of_date([ 2016, 10, 31 ], 'Europe/London'    ) }, sub { dt(2016, 10, 31, 0, 0, 0, 'Europe/London') } ],
+
+      [ 'UK, BST floating', '1.53', sub { start_of_date(DateTime->new( year =>  2016, month => 10, day => 30, time_zone => 'floating' ), 'Europe/London' ) }, sub { dt(2016, 10, 29,23, 0, 0)->set_time_zone('Europe/London') } ],
+      [ 'UK, BST floating late', '1.53', sub { start_of_date(DateTime->new( year =>  2016, month => 10, day => 30, hour => 23, time_zone => 'floating' ), 'Europe/London' ) }, sub { dt(2016, 10, 29,23, 0, 0)->set_time_zone('Europe/London') } ],
+      [ 'UK, BST tz', '1.53', sub { start_of_date(DateTime->new( year =>  2016, month => 10, day => 30, time_zone => 'Europe/London' ), 'Europe/London' ) }, sub { dt(2016, 10, 29,23, 0, 0)->set_time_zone('Europe/London') } ],
+      [ 'UK, BST tz late', '1.53', sub { start_of_date(DateTime->new( year =>  2016, month => 10, day => 30, hour => 23, time_zone => 'Europe/London' ), 'Europe/London' ) }, sub { dt(2016, 10, 29,23, 0, 0)->set_time_zone('Europe/London') } ],
    );
 
    plan tests => 0+@tests;
@@ -58,6 +67,7 @@ sub dt {
          skip("DateTime::TimeZone $min_ver required", 1)
             if $DateTime::TimeZone::VERSION < $min_ver;
 
+         local $@;
          my $got_dt = eval { $test_code->() };
          if (!$got_dt) {
             my $e = $@;
@@ -67,6 +77,7 @@ sub dt {
             next;
          }
 
+         local $@;
          my $expected_dt = eval { $expected_code->() };
          if (!$expected_dt) {
             my $e = $@;
