@@ -52,10 +52,10 @@ sub _start_of_date {
    return DateTime->from_epoch(epoch => $max_epoch*60, time_zone => $tz);
 }
 
-sub start_of_date  { _start_of_date(undef,   @_) }
+sub start_of_date  { _start_of_date('day',   @_) }
 sub start_of_month { _start_of_date('month', @_) }
 sub start_of_year  { _start_of_date('year',  @_) }
-sub start_of_today { _start_of_date(undef, DateTime->now( time_zone => $_[0] || 'local' )) }
+sub start_of_today { _start_of_date('day', DateTime->now( time_zone => $_[0] || 'local' )) }
 
 {
    no warnings qw( once );
