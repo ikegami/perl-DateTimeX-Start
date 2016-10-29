@@ -26,12 +26,12 @@ sub dt {
 
 {
    my @tests = (
-      [ 'An ordinary day',                         '0.18', undef,       sub { start_of_date( [ 2014,  2,  3 ], 'America/Toronto'         ) }, sub { dt(2014,  2,  3,  5, 0, 0)->set_time_zone('America/Toronto'  ) } ],
-      [ 'A day without midnight',                  '0.26', undef,       sub { start_of_date( [ 2013, 10, 20 ], 'America/Sao_Paulo'       ) }, sub { dt(2013, 10, 20,  3, 0, 0)->set_time_zone('America/Sao_Paulo') } ],
-      [ 'A day with two midnights',                '1.53', undef,       sub { start_of_date( [ 2013, 11,  3 ], 'America/Havana'          ) }, sub { dt(2013, 11,  3,  4, 0, 0)->set_time_zone('America/Havana'   ) } ],
+      [ 'An ordinary day',                         '0.18', undef, sub { start_of_date( [ 2014,  2,  3 ], 'America/Toronto'         ) }, sub { dt(2014,  2,  3,  5, 0, 0)->set_time_zone('America/Toronto'  ) } ],
+      [ 'A day without midnight',                  '0.26', undef, sub { start_of_date( [ 2013, 10, 20 ], 'America/Sao_Paulo'       ) }, sub { dt(2013, 10, 20,  3, 0, 0)->set_time_zone('America/Sao_Paulo') } ],
+      [ 'A day with two midnights',                '1.53', undef, sub { start_of_date( [ 2013, 11,  3 ], 'America/Havana'          ) }, sub { dt(2013, 11,  3,  4, 0, 0)->set_time_zone('America/Havana'   ) } ],
 
-      [ 'Result is 24 hours earlier [RT#118417]',  '0',    undef,       sub { start_of_date( dt(2016, 10, 30, 23,  0, 0, 'Europe/Paris') ) }, sub { dt(2016, 10, 29, 22, 0, 0)->set_time_zone('Europe/Paris'       ) } ],
-      [ 'Result is >24 hours earlier [RT#118417]', '0',    "RT#118417", sub { start_of_date( dt(2016, 10, 30, 23, 30, 0, 'Europe/Paris') ) }, sub { dt(2016, 10, 29, 22, 0, 0)->set_time_zone('Europe/Paris'       ) } ],
+      [ 'Result is 24 hours earlier [RT#118417]',  '0',    undef, sub { start_of_date( dt(2016, 10, 30, 23,  0, 0, 'Europe/Paris') ) }, sub { dt(2016, 10, 29, 22, 0, 0)->set_time_zone('Europe/Paris'       ) } ],
+      [ 'Result is >24 hours earlier [RT#118417]', '0',    undef, sub { start_of_date( dt(2016, 10, 30, 23, 30, 0, 'Europe/Paris') ) }, sub { dt(2016, 10, 29, 22, 0, 0)->set_time_zone('Europe/Paris'       ) } ],
    );
 
    plan tests => 0+@tests;
