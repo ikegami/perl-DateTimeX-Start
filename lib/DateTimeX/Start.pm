@@ -40,10 +40,10 @@ sub _start_of_date {
    my $target_day = ( $dt->local_rd_values )[0];
    my $min_epoch = int($dt->epoch()/60) - 24*60;
    my $max_epoch = int($dt->epoch()/60) + 24*60;
-   while ($max_epoch - $min_epoch > 1) {
+   while ($max_epoch > $min_epoch) {
       my $epoch = ( $min_epoch + $max_epoch ) >> 1;
       if (( DateTime->from_epoch( epoch => $epoch*60, time_zone => $tz )->local_rd_values )[0] < $target_day) {
-         $min_epoch = $epoch;
+         $min_epoch = $epoch + 1;
       } else {
          $max_epoch = $epoch;
       }
