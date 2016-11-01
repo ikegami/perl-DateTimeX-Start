@@ -1,5 +1,8 @@
 Revision history for DateTimeX-Start
 
+1.6.0   ~~~~-~~-~~
+        - ~~~
+
 1.4.0   2016-10-31
         - Fix bug RT#118417 which could produce the wrong result when passing
           a DT object to start_of_day/day.
