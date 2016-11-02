@@ -6,6 +6,7 @@ use warnings;
 
 use version; our $VERSION = qv('v1.5.0');
 
+use Carp               qw( );
 use DateTime           qw( );
 use DateTime::TimeZone qw( );
 use Exporter           qw( import );
@@ -37,7 +38,7 @@ sub _start_of_date {
       if !ref($tz);
 
    my $target_day = ( $dt->local_rd_values )[0];
-   my $epoch = int($dt->epoch / 60);
+   my $utc_day_start_epoch = int($dt->epoch / 60);
 
    # Most of the time, we don't need to do anything special.
    if (eval { $dt->set_time_zone($tz); 1 }) {
@@ -47,16 +48,19 @@ sub _start_of_date {
       }
    }
 
-   my $min_epoch = $epoch - 24*60;
-   my $max_epoch = $epoch + 24*60;
+   my $min_epoch = my $underflow_epoch = $utc_day_start_epoch - (24*60+1);
+   my $max_epoch = my $overflow_epoch  = $utc_day_start_epoch + (24*60+1);
    while ($max_epoch > $min_epoch) {
-      $epoch = ( $min_epoch + $max_epoch ) >> 1;
+      my $epoch = ( $min_epoch + $max_epoch ) >> 1;
       if (( DateTime->from_epoch( epoch => $epoch*60, time_zone => $tz )->local_rd_values )[0] < $target_day) {
          $min_epoch = $epoch + 1;
       } else {
          $max_epoch = $epoch;
       }
    }
+
+   $underflow_epoch < $max_epoch && $max_epoch < $overflow_epoch
+      or Carp::croak("Unable to find date " . DateTime->from_epoch( epoch => $utc_day_start_epoch*60 )->ymd . " in time zone " . $tz->name);
 
    return DateTime->from_epoch(epoch => $max_epoch*60, time_zone => $tz);
 }

@@ -22,6 +22,7 @@ This module requires these other modules and libraries:
     ExtUtils::MakeMaker 6.52    (For installation only)
     Software::License::CC0_1_0  (For installation only)
     Test::More                  (For testing only)
+    Carp
     DateTime
     DateTime::TimeZone          (1.53 or higher is required to avoid skipping tests)
     Exporter

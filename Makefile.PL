@@ -27,6 +27,7 @@ WriteMakefile(
          },
          runtime => {
             requires => {
+               'Carp'                => 0,
                'DateTime'            => 0,
                'DateTime::TimeZone'  => 0,
                'Exporter'            => 0,
