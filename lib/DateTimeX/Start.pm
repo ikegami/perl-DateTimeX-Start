@@ -27,8 +27,7 @@ sub _start_of_date {
 
    if (Scalar::Util::blessed($dt)) {
       $tz ||= $dt->time_zone;
-      $dt = $dt->clone->set_time_zone('floating')->truncate( to => $trunc )
-         if $trunc;
+      $dt = $dt->clone->set_time_zone('floating')->truncate( to => $trunc );
    } else {
       $tz ||= 'local';
       $dt = DateTime->new( year => $dt->[0], month => $dt->[1] || 1, day => $dt->[2] || 1 );
