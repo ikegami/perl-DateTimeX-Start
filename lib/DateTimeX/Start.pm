@@ -247,6 +247,18 @@ For C<date>, C<month>, C<year> and C<today>.
 =back
 
 
+=head1 NOTES
+
+=over 4
+
+=item * This purpose of the functions of this module is to find the earliest time of the specified date.
+As such, if a day has two midnights, the earlier of two will be returned.
+
+=item * Arguments passed to the functions of this module aren't modified.
+
+=back
+
+
 =head1 ASSUMPTIONS
 
 The code makes the following assumptions about time zones:
