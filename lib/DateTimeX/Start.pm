@@ -297,13 +297,11 @@ You can find documentation for this module with the perldoc command.
 
     perldoc DateTimeX::Start
 
-You can also find it online at these locations:
+You can also find it online at this location:
 
 =over
 
-=item * L<http://search.cpan.org/dist/DateTimeX-Start>
-
-=item * L<https://metacpan.org/release/DateTimeX-Start>
+=item * L<https://metacpan.org/dist/DateTimeX-Start>
 
 =back
 
@@ -319,17 +317,11 @@ If you need help, the following are great resources:
 
 =back
 
-Bugs and improvements can be reported using any of the following systems:
 
-=over
+=head1 BUGS
 
-=item Using CPAN's request tracker by emailing C<bug-DateTimeX-Start at rt.cpan.org>
-
-=item Using CPAN's request tracker at L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=DateTimeX-Start>
-
-=item Using GitHub's issue tracker at L<https://github.com/ikegami/perl-DateTimeX-Start/issues>
-
-=back
+Please report any bugs or feature requests using L<https://github.com/ikegami/perl-DateTimeX-Start/issues>.
+I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
 
 =head1 REPOSITORY
