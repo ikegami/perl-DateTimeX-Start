@@ -1,8 +1,7 @@
 Revision history for DateTimeX-Start
 
-1.8.0   ~~~~-~~-~~
+1.8.0   2025-01-05
         - Corrected the version of ExtUtils::MakeMaker that's required.
-        - ~~~
 
 1.6.0   2016-11-01
         - Optimized based on the assumption that most calls will be for days
