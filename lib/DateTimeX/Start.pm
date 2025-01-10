@@ -4,7 +4,7 @@ package DateTimeX::Start;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.9.0');
+use version; our $VERSION = qv('v1.9');
 
 use Carp               qw( );
 use DateTime           qw( );
@@ -90,7 +90,7 @@ DateTimeX::Start - Find the time at which a day starts.
 
 =head1 VERSION
 
-Version 1.9.0
+Version 1.9
 
 
 =head1 SYNOPSIS
